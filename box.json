@@ -1,0 +1,27 @@
+{
+    "chmod": "0755",
+    "main": "bin/tosk",
+    "output": "tosk",
+    "alias": "tosk",
+    "force-autodiscovery": true,
+    "directories": [
+        "src",
+        "vendor"
+    ],
+    "files": [
+        "composer.json",
+        ".env",
+        "config/bundles.php"
+    ],
+    "finder": [
+        {
+            "name": "*.php",
+            "exclude": ["Tests", "tests", "test", "Docs", "docs"],
+            "in": "src"
+        }
+    ],
+    "banner": "*** Tosk (Version 0.1.0) ***",
+    "stub": true,
+    "dump-autoload": false,
+    "annotations": true
+}

@@ -1,0 +1,22 @@
+framework:
+    secret: '%env(APP_SECRET)%'
+    http_method_override: false
+    session: false
+    assets: false
+    csrf_protection: false
+    profiler:
+        enabled: false
+        collect: false
+    router:
+        enabled: false
+    annotations:
+        enabled: false
+    serializer:
+        enabled: true
+    translator:
+        enabled: false
+        cache_dir: null
+    mailer:
+        enabled: false
+    rate_limiter:
+        enabled: false

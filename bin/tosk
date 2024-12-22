@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
+
+use ToskSh\Tosk\Kernel;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+
+return function (array $context) {
+    $env = $context['APP_ENV'] ?? 'prod';
+    if (!empty($context['APP_ENV']) && strtolower($env) === 'prod') {
+        error_reporting(E_ALL ^ E_DEPRECATED);
+    }
+
+    $debug = (bool) $context['APP_DEBUG'] ?? 'prod' !== $env;
+
+    $kernel = new Kernel($env, $debug);
+    $application = new Application($kernel);
+    $application->setName("Tosk");
+    $application->setVersion($_ENV['APP_VERSION'] ?? '');
+    
+    return $application;
+};
