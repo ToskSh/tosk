@@ -185,25 +185,13 @@ class TaskService {
         string|false $name = false,
         string|false $duration = false,
         string|false $remaining = false,
-        array|false $tags = false,
     ): self {
-        if ($name === false && $duration === false && $remaining === false && $tags === false):
+        if ($name === false && $duration === false && $remaining === false):
             return $this;
         endif;
 
         $task = $this->getTask(createItIfNotExist: true);
         $task->setName($name !== false ? $name : $this->getTask()->getName());
-
-        $arrayTags = [];
-        foreach ($tags as $tag):
-            if ($tag):
-                $arrayTags[] = $tag;
-            endif;
-        endforeach;
-
-        if (!empty($arrayTags)):
-            $task->setTags(new TagCollection($tags));
-        endif;
         
         if ($duration !== false):
             $firstStep = $task->getSteps()->first();
