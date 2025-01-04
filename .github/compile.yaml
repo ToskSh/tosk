@@ -1,4 +1,4 @@
-name: Compile marathon binary
+name: Compile tosk binary
 
 on:
   push:
@@ -22,11 +22,11 @@ jobs:
       - name: Install Box builder
         run: composer global require humbug/box
 
-      - name: Run PHPUnit tests & build Marathon project
+      - name: Run PHPUnit tests & build Tosk project
         run: make build
 
-      - name: Test marathon binary
-        run: php marathon task:list
+      - name: Test tosk binary
+        run: php tosk task:list
 
       - name: Check infinite loop
         run: |
@@ -53,7 +53,7 @@ jobs:
             git config --global user.email "$EMAIL"
             echo "EMAIL=$EMAIL" >> $GITHUB_ENV
 
-      - name: Commit new marathon binary
+      - name: Commit new tosk binary
         if: ${{ env.INFINITE_LOOP == 'false' && env.BRANCH != 'main' }}
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
