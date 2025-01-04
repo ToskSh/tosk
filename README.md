@@ -12,11 +12,24 @@ It provides a comprehensive solution for maintaining a project-related activitie
 - **Markdown support:** Implementation of markdown synthax into commit message.
 - **Custom tags supports:** (`<red>`, `<green-bg>`, `<bold>` ect...) Implemented into commit message.
 ## Installation
+### Installer
+```bash
+  # This script should be run via curl:
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/ToskSh/tosk/main/install.sh)"
+  # or via wget:
+  bash -c "$(wget -qO- https://raw.githubusercontent.com/ToskSh/tosk/main/install.sh)"
+  # or via fetch:
+  bash -c "$(fetch -o - https://raw.githubusercontent.com/ToskSh/tosk/main/install.sh)"
+
+  # As an alternative, you can first download the install script and run it afterwards:
+  wget https://raw.githubusercontent.com/ToskSh/tosk/main/install.sh
+  bash install.sh
+```
 ### Binary
 ```bash
 curl --output tosk https://raw.githubusercontent.com/ToskSh/tosk/main/tosk
-chmod 755 tosk
-sudo cp tosk /usr/local/bin/tosk
+chmod +x tosk
+sudo mv tosk /usr/local/bin/tosk
 tosk <command>
 ```
 ### Docker
