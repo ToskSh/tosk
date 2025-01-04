@@ -15,6 +15,7 @@ tosk.json
 marathon.json
 .vscode
 .idea
+.git-credentials
 ###< ToskSh/tosk ###
 
 ###> symfony/phpunit-bridge ###
