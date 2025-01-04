@@ -6,6 +6,7 @@
     "force-autodiscovery": true,
     "directories": [
         "src",
+        "config",
         "vendor"
     ],
     "files": [
@@ -17,8 +18,12 @@
         {
             "name": "*.php",
             "exclude": ["Tests", "tests", "test", "Docs", "docs"],
-            "in": "src"
+            "in": ["src", "vendor"]
         }
+    ],
+    "compactors": [
+        "KevinGH\\Box\\Compactor\\Php",
+        "KevinGH\\Box\\Compactor\\Json"
     ],
     "banner": "*** Tosk (Version 0.1.1) ***",
     "stub": true,
