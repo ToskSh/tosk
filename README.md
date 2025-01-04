@@ -12,7 +12,7 @@ It provides a comprehensive solution for maintaining a project-related activitie
 - **Markdown support:** Implementation of markdown synthax into commit message.
 - **Custom tags supports:** (`<red>`, `<green-bg>`, `<bold>` ect...) Implemented into commit message.
 ## Installation
-### Installer
+### Bash installer
 ```bash
   # This script should be run via curl:
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/ToskSh/tosk/main/install.sh)"
