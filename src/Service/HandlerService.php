@@ -92,10 +92,11 @@ class HandlerService {
         string|false $name = false,
         string|false $duration = false,
         string|false $remaining = false,
+        array $tags = [],
     ): self {
         return $this->setTask(
             $this->taskService
-                ->update($name, $duration, $remaining)
+                ->update($name, $duration, $remaining, $tags)
                 ->start()
                 ->getTask()
         )->writeTask();

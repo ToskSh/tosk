@@ -25,6 +25,9 @@ class TaskStartCommand extends Command {
             ->addOption('name', 'N', InputOption::VALUE_REQUIRED, 'Set the task <comment>name</comment>', false)
             ->addOption('new', null, InputOption::VALUE_NONE, 'Creating <comment>new task</comment>')
 
+            ->addOption('tag', 't', InputOption::VALUE_REQUIRED, 'Create <comment>tag</comment> associated to the task', false)
+            ->addOption('tags', 'T', InputOption::VALUE_IS_ARRAY, 'Create <comment>tags</comment> associated to the task', false)
+
             // Config
             ->addOption('config-path', 'c', InputOption::VALUE_REQUIRED, 'Set <comment>/file/path/to/json/config</comment>', false)
             ->addOption('config-task-dir', 'p', InputOption::VALUE_REQUIRED, 'Set <comment>/directory/path/to/tasks</comment> containing a reports', false)
@@ -58,6 +61,7 @@ class TaskStartCommand extends Command {
                 $input->getOption('name'),
                 $input->getOption('duration'),
                 $input->getOption('remaining'),
+                [$input->getOption('tag')] + $input->getOption('tags')
             );
 
             // Output render into terminal

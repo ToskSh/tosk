@@ -21,6 +21,8 @@ class Task {
     private CommitCollection $commits;
     /** @var StepCollection<Step> */
     private StepCollection $steps;
+    /** @var TagCollection<Tag> */
+    private TagCollection $tags;
 
     /**
      * @description Remaining seconds to complete the task.
@@ -145,5 +147,30 @@ class Task {
 
     public function getLastUpdateDate(): int|null {
         return $this->lastUpdateDate;
+    }
+
+    /**
+     * @param TagCollection<Tag> $tags
+     * @return $this
+     */
+    public function setTags(TagCollection $tags): self {
+        $this->tags = $tags;
+
+        return $this;
+    }
+
+    /**
+     * @return TagCollection<Tag>
+     */
+    public function getTags(): TagCollection {
+        return $this->tags;
+    }
+
+    public function addTag(Tag $tag): self {
+        if (!$this->getTags()->contains($tag)):
+            $this->getTags()->add($tag);
+        endif;
+
+        return $this;
     }
 }
