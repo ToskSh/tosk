@@ -34,8 +34,8 @@ class TaskListCommand extends Command {
 
             // Config
             ->addOption('config-path', 'C', InputOption::VALUE_REQUIRED, 'Set <comment>/file/path/to/json/config</comment>', false)
-            ->addOption('config-task-dir', 'P', InputOption::VALUE_REQUIRED, 'Set <comment>/directory/path/to/tasks</comment> containing a reports', false)
-            ->addOption('config-editor', 'E', InputOption::VALUE_REQUIRED, 'Set default <comment>editor</comment> (ex: "<comment>nano</comment>", "<comment>vim</comment>")', false)
+            ->addOption('config-task-dir', 'D', InputOption::VALUE_REQUIRED, 'Set <comment>/directory/path/to/tasks</comment> containing a reports', false)
+            ->addOption('config-editor', 'P', InputOption::VALUE_REQUIRED, 'Set default <comment>editor</comment> (ex: "<comment>nano</comment>", "<comment>vim</comment>")', false)
         ;
     }
 
