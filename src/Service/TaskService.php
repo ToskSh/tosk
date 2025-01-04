@@ -194,7 +194,14 @@ class TaskService {
         $task = $this->getTask(createItIfNotExist: true);
         $task->setName($name !== false ? $name : $this->getTask()->getName());
 
-        if ($tags):
+        $arrayTags = [];
+        foreach ($tags as $tag):
+            if ($tag):
+                $arrayTags[] = $tag;
+            endif;
+        endforeach;
+
+        if (!empty($arrayTags)):
             $task->setTags(new TagCollection($tags));
         endif;
         

@@ -20,7 +20,7 @@
             "in": "src"
         }
     ],
-    "banner": "*** Tosk (Version 0.1.0) ***",
+    "banner": "*** Tosk (Version 0.1.1) ***",
     "stub": true,
     "dump-autoload": false,
     "annotations": true
