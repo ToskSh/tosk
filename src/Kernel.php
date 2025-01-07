@@ -24,7 +24,7 @@ class Kernel extends BaseKernel
 
     public function getCacheDir(): string
     {
-        return sys_get_temp_dir() . '/tosk_cache';
+        return sys_get_temp_dir() . '/tosk_cache_' . uniqid();
     }
 
     public function getLogDir(): string

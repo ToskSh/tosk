@@ -19,7 +19,8 @@
         "version control",
         "commit history",
         "workflow",
-        "developer tools"
+        "developer tools",
+        "marathon"
     ],
     "homepage": "https://github.com/ToskSh/tosk",
     "authors": [
@@ -99,6 +100,9 @@
         },
         "tosk": {
             "console": "bin/tosk"
+        },
+        "runtime": {
+            "project_dir": "."
         }
     },
     "require-dev": {

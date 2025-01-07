@@ -34,14 +34,14 @@ phpunit: test ## Run PHPUnit tests
 ##Build
 ##
 compile: tests install-opti cache warmup ## Build Tosk project
-	box compile
+	box compile --no-parallel
 build: compile ## Build Tosk project
 
 build-prod: tests install-opti cache ## Build Tosk project
-	box compile
+	box compile --no-parallel
 
 build-without-tests: install-opti cache ## Build Tosk project without running tests
-	box compile
+	box compile --no-parallel
 build-without-test: build-without-tests ## Build Tosk project without running tests
 compile-without-tests: build-without-tests ## Build Tosk project without running tests
 compile-without-test: build-without-tests ## Build Tosk project without running tests

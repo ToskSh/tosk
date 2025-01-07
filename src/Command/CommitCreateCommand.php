@@ -20,14 +20,14 @@ class CommitCreateCommand extends Command {
     protected function configure(): void {
         $this
             ->addArgument('message', InputArgument::OPTIONAL, 'Define a commit <comment>message</comment>', false)
-            ->addOption('editor', 'e', InputOption::VALUE_NONE, 'Open default message <comment>editor</comment>')
+            ->addOption('editor', 'E', InputOption::VALUE_NONE, 'Open default message <comment>editor</comment>')
             ->addOption('duration', 'd', InputOption::VALUE_REQUIRED, 'Set the <comment>duration</comment> of the new commit (ex: "<comment>10min</comment>", "<comment>1d</comment>", "<comment>1 day 10 minutes</comment>", "<comment>1h</comment>", "<comment>2 hours</comment>", "<comment>-1hour</comment>")', false)
             ->addOption('task-id', 't', InputOption::VALUE_REQUIRED, 'Task <comment>ID</comment> or <comment>name</comment>', null)
 
             // Config
-            ->addOption('config-path', 'c', InputOption::VALUE_REQUIRED, 'Set <comment>/file/path/to/json/config</comment>', false)
-            ->addOption('config-task-dir', 'p', InputOption::VALUE_REQUIRED, 'Set <comment>/directory/path/to/tasks</comment> containing a reports', false)
-            ->addOption('config-editor', 'E', InputOption::VALUE_REQUIRED, 'Set default <comment>editor</comment> (ex: "<comment>nano</comment>", "<comment>vim</comment>")', false)
+            ->addOption('config-path', 'C', InputOption::VALUE_REQUIRED, 'Set <comment>/file/path/to/json/config</comment>', false)
+            ->addOption('config-task-dir', 'D', InputOption::VALUE_REQUIRED, 'Set <comment>/directory/path/to/tasks</comment> containing a reports', false)
+            ->addOption('config-editor', 'P', InputOption::VALUE_REQUIRED, 'Set default <comment>editor</comment> (ex: "<comment>nano</comment>", "<comment>vim</comment>")', false)
         ;
     }
 

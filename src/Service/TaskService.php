@@ -10,6 +10,7 @@ use ToskSh\Tosk\Exception\DurationStrToTimeException;
 use ToskSh\Tosk\Exception\RemainingStrToTimeException;
 use ToskSh\Tosk\Exception\TaskNotFoundException;
 use Symfony\Component\Filesystem\Filesystem;
+use ToskSh\Tosk\Collection\TagCollection;
 
 class TaskService {
     private Task|null $task = null;
@@ -191,7 +192,7 @@ class TaskService {
 
         $task = $this->getTask(createItIfNotExist: true);
         $task->setName($name !== false ? $name : $this->getTask()->getName());
-
+        
         if ($duration !== false):
             $firstStep = $task->getSteps()->first();
             $task->getSteps()->clear();
