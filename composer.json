@@ -31,6 +31,21 @@
     ],
     "prefer-stable": true,
     "minimum-stability": "stable",
+    "replace": {
+        "phppkg/cli-markdown": "*",
+        "ramsey/collection": "*",
+        "symfony/console": "*",
+        "symfony/dotenv": "*",
+        "symfony/emoji": "*",
+        "symfony/flex": "*",
+        "symfony/framework-bundle": "*",
+        "symfony/http-client": "*",
+        "symfony/property-access": "*",
+        "symfony/property-info": "*",
+        "symfony/runtime": "*",
+        "symfony/serializer": "*",
+        "symfony/yaml": "*"
+    },
     "require": {
         "php": ">=8.2",
         "ext-ctype": "*",
