@@ -65,7 +65,7 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "@php bin/tosk --version"
+            "if [ -n \"$WINDIR\" ]; then if [ -f \"$HOME/Documents/PowerShell/profile.ps1\" ]; then if ! grep -q \"$HOME/.config/composer/vendor/bin\" \"$HOME/Documents/PowerShell/profile.ps1\"; then echo '$env:PATH=\"$HOME/.config/composer/vendor/bin;$env:PATH\"' >> \"$HOME/Documents/PowerShell/profile.ps1\"; fi; fi; else if ! echo \"$PATH\" | grep -q \"$HOME/.config/composer/vendor/bin\"; then echo 'export PATH=\"$HOME/.config/composer/vendor/bin:$PATH\"' >> ~/.bashrc; fi; source ~/.bashrc; fi"
         ]
     },
     "conflict": {
