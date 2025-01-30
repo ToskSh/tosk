@@ -41,7 +41,7 @@
         "ext-xml": "*",
         "ext-xmlwriter": "*"
     },
-    "bin": ["tosk"],
+    "bin": ["./tosk"],
     "config": {
         "preferred-install": {
             "*": "dist"
