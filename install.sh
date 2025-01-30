@@ -143,7 +143,7 @@ install() {
     rm -rf "${temp_dir}"
 
     # Verify installation
-    if command -v "${BINARY_NAME}" >/dev/null 2>&1; then
+    if tosk -v "${BINARY_NAME}" >/dev/null 2>&1; then
         print_success "${BINARY_NAME} has been successfully installed to ${install_dir}"
         print_message "Installed version: $(${BINARY_NAME} --version 2>/dev/null || echo 'Version not available')"
     else
