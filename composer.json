@@ -45,6 +45,7 @@
         "symfony/runtime": "*",
         "symfony/serializer": "*",
         "symfony/yaml": "*",
+        "symfony/phpunit-bridge": "*",
         "paragonie/random_compat": "2.*",
         "symfony/polyfill-ctype": "*",
         "symfony/polyfill-iconv": "*",
