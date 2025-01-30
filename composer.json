@@ -1,7 +1,7 @@
 {
     "name": "tosksh/tosk",
     "description": "Tosk is a command-line tool written in PHP and Symfony that empowers you to efficiently manage times from tasks for your projects.",
-    "type": "metapackage",
+    "type": "library",
     "keywords": [
         "tosk",
         "task",
@@ -31,29 +31,6 @@
     ],
     "prefer-stable": true,
     "minimum-stability": "stable",
-    "replace": {
-        "phppkg/cli-markdown": "*",
-        "ramsey/collection": "*",
-        "symfony/console": "*",
-        "symfony/dotenv": "*",
-        "symfony/emoji": "*",
-        "symfony/flex": "*",
-        "symfony/framework-bundle": "*",
-        "symfony/http-client": "*",
-        "symfony/property-access": "*",
-        "symfony/property-info": "*",
-        "symfony/runtime": "*",
-        "symfony/serializer": "*",
-        "symfony/yaml": "*",
-        "symfony/phpunit-bridge": "*",
-        "paragonie/random_compat": "2.*",
-        "symfony/polyfill-ctype": "*",
-        "symfony/polyfill-iconv": "*",
-        "symfony/polyfill-php72": "*",
-        "symfony/polyfill-php71": "*",
-        "symfony/polyfill-php70": "*",
-        "symfony/polyfill-php56": "*"
-    },
     "require": {
         "php": ">=8.2",
         "ext-ctype": "*",
@@ -68,7 +45,6 @@
         "symfony/console": "^7.2",
         "symfony/dotenv": "^7.2",
         "symfony/emoji": "^7.2",
-        "symfony/flex": "*",
         "symfony/framework-bundle": "^7.2",
         "symfony/http-client": "^7.2",
         "symfony/property-access": "^7.2",
@@ -83,7 +59,6 @@
             "*": "dist"
         },
         "sort-packages": true,
-        "bin-dir": "../../bin",
         "allow-plugins": {
             "symfony/flex": true,
             "symfony/runtime": true
@@ -101,20 +76,14 @@
         }
     },
     "scripts": {
-        "console-package": "php bin/tosk"
+        "post-install-cmd": [
+            "@php bin/tosk --version"
+        ]
     },
     "conflict": {
         "symfony/symfony": "*"
     },
     "extra": {
-        "symfony": {
-            "allow-contrib": false,
-            "require": "^7.2",
-            "console": "bin/console"
-        },
-        "tosk": {
-            "console": "bin/tosk"
-        },
         "runtime": {
             "project_dir": "."
         }
